@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Gems
+  - Gems2
+  - Gems3
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -43,4 +47,16 @@ TagManager:
     locked: 0
   - name: Player
     uniqueID: 594509391
+    locked: 0
+  - name: Trees
+    uniqueID: 1237990161
+    locked: 0
+  - name: Items
+    uniqueID: 2795114343
+    locked: 0
+  - name: UI
+    uniqueID: 4155979119
+    locked: 0
+  - name: Zombie
+    uniqueID: 853300437
     locked: 0
