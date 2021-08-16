@@ -6,14 +6,15 @@ public class Playercontroller : MonoBehaviour
 {
     public float moveSpeed = 1;
     public Animator animator;
+    private Rigidbody2D rb;
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         animator.SetFloat("Horizontal", Input.GetAxis("Horizontal"));
         animator.SetFloat("Vertical", Input.GetAxis("Vertical"));
@@ -21,8 +22,10 @@ public class Playercontroller : MonoBehaviour
 
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
- 
 
-        transform.Translate(new Vector3(horizontalInput, verticalInput, 0)* moveSpeed * Time.deltaTime);
+        rb.velocity = new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed);
+     
     }
+
+ 
 }

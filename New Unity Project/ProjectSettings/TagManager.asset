@@ -8,6 +8,7 @@ TagManager:
   - Gems2
   - Gems3
   - Enemy
+  - Trees
   layers:
   - Default
   - TransparentFX
@@ -59,4 +60,7 @@ TagManager:
     locked: 0
   - name: Zombie
     uniqueID: 853300437
+    locked: 0
+  - name: House
+    uniqueID: 556496337
     locked: 0

@@ -41,3 +41,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Player
+    uniqueID: 1320841991
+    locked: 0
+  - name: House
+    uniqueID: 1797819997
+    locked: 0
+  - name: Items
+    uniqueID: 2912307263
+    locked: 0
