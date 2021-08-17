@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraFollow : MonoBehaviour
+public class CameraFollowGuild : MonoBehaviour
 {
     public Transform player;
-    float xWidthC = 0.640011f;
-    float yHeightC = 1.907759f;
-    float negXWidthC = -0.4094076f;
-    float negYHeightC = -2.808387f;
+    float xWidthC = 5.31f;
+    float yHeightC = 4.94f;
+    float negXWidthC = -4.69f;
+    float negYHeightC = 0f;
 
     // Start is called before the first frame update
     void FixedUpdate()
@@ -18,12 +18,12 @@ public class CameraFollow : MonoBehaviour
     }
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }

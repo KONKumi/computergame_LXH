@@ -50,3 +50,6 @@ TagManager:
   - name: Items
     uniqueID: 2912307263
     locked: 0
+  - name: Trees
+    uniqueID: 1292195157
+    locked: 0

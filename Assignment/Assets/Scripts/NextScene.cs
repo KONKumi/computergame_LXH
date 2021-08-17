@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class NextScene : MonoBehaviour
 {
     public string nextLevel;
-    public Animator animator;
+   
     // Start is called before the first frame update
   
     
@@ -14,7 +14,7 @@ public class NextScene : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player"))
         {
-            animator.SetBool("isOpen", true);
+
             SceneManager.LoadScene(nextLevel);
         }
     }
