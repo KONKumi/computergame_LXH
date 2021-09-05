@@ -328,10 +328,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BlueGems (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 2372350971970667063, guid: 57d4a52843de50749a3220cf49d7f4c8, type: 3}
-      propertyPath: m_TagString
-      value: Gems2
-      objectReference: {fileID: 0}
     - target: {fileID: 2372350971970667065, guid: 57d4a52843de50749a3220cf49d7f4c8, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -7720,6 +7716,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieFollowPath (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6337895010717135000, guid: e15916031987bed4aa35a91111488000, type: 3}
+      propertyPath: m_TagString
+      value: FollowEnemy
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 2336226862156574422, guid: e15916031987bed4aa35a91111488000, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e15916031987bed4aa35a91111488000, type: 3}
@@ -7770,6 +7770,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gems (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7355236502847631096, guid: 91e8acb31cdc6e84aa00901ddbaf7f55, type: 3}
+      propertyPath: collect
+      value: 
+      objectReference: {fileID: 8300000, guid: 312ab1e669d7d564c9834cced5a8c9ad, type: 3}
     - target: {fileID: 7355236502847631101, guid: 91e8acb31cdc6e84aa00901ddbaf7f55, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -8084,14 +8088,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2108346686}
     m_Modifications:
-    - target: {fileID: 3282599837444569011, guid: b0d769b3e2597a944a9ebdb67b102096, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6626763726546394402, guid: b0d769b3e2597a944a9ebdb67b102096, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7200330943630696608, guid: b0d769b3e2597a944a9ebdb67b102096, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -8140,8 +8136,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Zombie1
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6626763726546394402, guid: b0d769b3e2597a944a9ebdb67b102096, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0d769b3e2597a944a9ebdb67b102096, type: 3}
 --- !u!1001 &1344569046
 PrefabInstance:
@@ -8153,10 +8148,6 @@ PrefabInstance:
     - target: {fileID: 8708021479806863207, guid: 9a30ba4ad34aca6409134a7fcd79760e, type: 3}
       propertyPath: m_Name
       value: GreenGems (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 8708021479806863207, guid: 9a30ba4ad34aca6409134a7fcd79760e, type: 3}
-      propertyPath: m_TagString
-      value: Gems3
       objectReference: {fileID: 0}
     - target: {fileID: 8708021479806863209, guid: 9a30ba4ad34aca6409134a7fcd79760e, type: 3}
       propertyPath: m_RootOrder
@@ -8625,7 +8616,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1704952674}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.58, y: -7.399999, z: -10}
+  m_LocalPosition: {x: -8.1, y: -4.3, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8664,6 +8655,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1765214936}
   - component: {fileID: 1765214935}
+  - component: {fileID: 1765214937}
   m_Layer: 0
   m_Name: GameController
   m_TagString: GameController
@@ -8683,6 +8675,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3fcff2fa79cb1c4c8f0248266358416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameOver: GameOver
   text: {fileID: 773391583}
   victoryText: {fileID: 1622436681}
   score: 0
@@ -8700,6 +8693,102 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1765214937
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765214934}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 14d82ca63e05b264db8c2c71e72fe5b3, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1829209099
 GameObject:
   m_ObjectHideFlags: 0
@@ -8959,6 +9048,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ZombieChasePlayer (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7358765294917941196, guid: 8211eb0c3778f3945af808baa2ae32be, type: 3}
+      propertyPath: m_TagString
+      value: ChaseEnemy
+      objectReference: {fileID: 0}
     - target: {fileID: 8245080255518966804, guid: 8211eb0c3778f3945af808baa2ae32be, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -9073,18 +9166,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 1709291976}
-    - target: {fileID: 1261252085148792912, guid: 8211eb0c3778f3945af808baa2ae32be, type: 3}
-      propertyPath: moveSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261252085402129329, guid: 8211eb0c3778f3945af808baa2ae32be, type: 3}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1261252085402129331, guid: 8211eb0c3778f3945af808baa2ae32be, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.07
-      objectReference: {fileID: 0}
     - target: {fileID: 7358765294917941196, guid: 8211eb0c3778f3945af808baa2ae32be, type: 3}
       propertyPath: m_Name
       value: ZombieChasePlayer
@@ -9095,11 +9176,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8245080255518966804, guid: 8211eb0c3778f3945af808baa2ae32be, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.454924
+      value: -5.51
       objectReference: {fileID: 0}
     - target: {fileID: 8245080255518966804, guid: 8211eb0c3778f3945af808baa2ae32be, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.379713
+      value: -1.59
       objectReference: {fileID: 0}
     - target: {fileID: 8245080255518966804, guid: 8211eb0c3778f3945af808baa2ae32be, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9221,11 +9302,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5609520786749248337, guid: afb92b5900683ec47ba47a642678f5ca, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.24
+      value: 2.8
       objectReference: {fileID: 0}
     - target: {fileID: 5609520786749248337, guid: afb92b5900683ec47ba47a642678f5ca, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -9.199999
+      value: -4.7
       objectReference: {fileID: 0}
     - target: {fileID: 5609520786749248337, guid: afb92b5900683ec47ba47a642678f5ca, type: 3}
       propertyPath: m_LocalPosition.z
@@ -9324,6 +9405,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2372350971970667068, guid: 57d4a52843de50749a3220cf49d7f4c8, type: 3}
+      propertyPath: collect
+      value: 
+      objectReference: {fileID: 8300000, guid: 312ab1e669d7d564c9834cced5a8c9ad, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57d4a52843de50749a3220cf49d7f4c8, type: 3}
 --- !u!1001 &8708021480134705184
@@ -9385,5 +9470,9 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8708021479806863212, guid: 9a30ba4ad34aca6409134a7fcd79760e, type: 3}
+      propertyPath: collect
+      value: 
+      objectReference: {fileID: 8300000, guid: 312ab1e669d7d564c9834cced5a8c9ad, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a30ba4ad34aca6409134a7fcd79760e, type: 3}

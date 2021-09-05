@@ -46,5 +46,23 @@ public class HurtEnemy : MonoBehaviour
                 StartCoroutine(Wait());
             }
         }
+
+        if (other.gameObject.CompareTag("FollowEnemy"))
+        {
+            if (isAttack)
+            {
+                enemy = other.gameObject;
+                StartCoroutine(Wait());
+            }
+        }
+
+        if (other.gameObject.CompareTag("ChaseEnemy"))
+        {
+            if (isAttack)
+            {
+                enemy = other.gameObject;
+                StartCoroutine(Wait());
+            }
+        }
     }
 }

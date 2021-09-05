@@ -5,13 +5,15 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public Transform player;
-    float xWidthC = 1.2f;
-    float yHeightC = 5f;
+    float xWidthC = 12f;
+    float yHeightC = 3.2f;
+    float negXWidthC = -8.1f;
+    float negYHeightC = -7.3f;
     // Start is called before the first frame update
     void FixedUpdate()
     {
-        transform.position = new Vector3(Mathf.Clamp(player.position.x, -xWidthC, xWidthC),
-           Mathf.Clamp(player.position.y, -yHeightC, yHeightC), transform.position.z);
+        transform.position = new Vector3(Mathf.Clamp(player.position.x, negXWidthC, xWidthC),
+           Mathf.Clamp(player.position.y, negYHeightC, yHeightC), transform.position.z);
     }
     void Start()
     {

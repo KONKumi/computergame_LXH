@@ -5,9 +5,9 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MainMenuScene.unity
+    guid: 2e00a46a84281004dad8bbdc7f9b3985
   - enabled: 1
     path: Assets/Scenes/RPGLV1.unity
     guid: 5502b233c75e2d54a8e0df0393484adb
@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/RPGLV3.unity
     guid: db1fcbadbba673044b4565d92f0861ae
+  - enabled: 1
+    path: Assets/Scenes/GameOver.unity
+    guid: 6f450471c5395de4cbdcff81640baee5
   m_configObjects: {}

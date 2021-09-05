@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - water
+  - Bucket
+  - Arrow
+  - Gangster
+  - Cadre
+  - Check
+  - FireBall
+  - Satan
   layers:
   - Default
   - TransparentFX
@@ -52,4 +60,22 @@ TagManager:
     locked: 0
   - name: Trees
     uniqueID: 1292195157
+    locked: 0
+  - name: NPC
+    uniqueID: 2909505837
+    locked: 0
+  - name: Beg
+    uniqueID: 4234204651
+    locked: 0
+  - name: Health
+    uniqueID: 1362610451
+    locked: 0
+  - name: HealthBar
+    uniqueID: 298325625
+    locked: 0
+  - name: textbox
+    uniqueID: 2061504309
+    locked: 0
+  - name: map
+    uniqueID: 1208106929
     locked: 0

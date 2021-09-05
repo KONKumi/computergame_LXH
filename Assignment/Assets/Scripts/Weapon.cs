@@ -14,12 +14,14 @@ public class Weapon : MonoBehaviour
     Vector2 where;
     float fireRate = 1.0f;
     private float nextFire;
+   
 
     // Start is called before the first frame update
     void Start()
     {
         parent = gameObject.GetComponentInParent<Animator>();
      
+
     }
 
 
@@ -64,10 +66,9 @@ public class Weapon : MonoBehaviour
             }
 
 
-            //Weapon firing logic goes here.
-
-
-            Debug.Log("Firing once every 1s");
+                //Weapon firing logic goes here.
+              
+                Debug.Log("Firing once every 1s");
             }
 
         }

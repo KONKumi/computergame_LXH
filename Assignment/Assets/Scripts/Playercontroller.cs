@@ -8,13 +8,82 @@ public class Playercontroller : MonoBehaviour
     public Animator animator;
     float fireRate = 1.0f;
     private float nextFire;
+    GameController gc;
+    private Rigidbody2D rb;
+    static AudioSource audioSrc;
+    float horizontalInput;
+    float verticalInput;
+
     // Start is called before the first frame update
     void Start()
     {
+        audioSrc = GetComponent<AudioSource>();
+        rb = GetComponent<Rigidbody2D>();
+        gc = GameObject.FindGameObjectWithTag("GameController").GetComponent<GameController>();
+         audioSrc.Play(0);
+       
         
     }
 
     // Update is called once per frame
+    void isStop()
+    {
+        if (horizontalInput == 0 && verticalInput == 0)
+            audioSrc.Pause();
+    }
+
+    void isMoving()
+    {
+        if (horizontalInput != 0 || verticalInput != 0)
+            audioSrc.UnPause();
+
+    }
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Gangster"))
+        {
+            ChasePlayer enemyChase = other.gameObject.GetComponent<ChasePlayer>();
+            enemyChase.moveSpeed = 0;
+            gc.attackPlayer(1f);
+        }
+        else if(other.gameObject.CompareTag("Cadre"))
+        {
+            ChasePlayer enemyChase = other.gameObject.GetComponent<ChasePlayer>();
+            enemyChase.moveSpeed = 0;
+            gc.attackPlayer(1f);
+        }
+
+
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("FireBall"))
+        {
+
+            gc.attackPlayer(2f);
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D other)
+    {
+      
+        if (other.gameObject.CompareTag("Gangster"))
+        {
+            ChasePlayer enemyChase = other.gameObject.GetComponent<ChasePlayer>();
+            enemyChase.moveSpeed = 1;
+
+        }
+        else if(other.gameObject.CompareTag("Cadre"))
+        {
+            ChasePlayer enemyChase = other.gameObject.GetComponent<ChasePlayer>();
+            enemyChase.moveSpeed = 1;
+
+        }
+
+    }
+
+
     void Update()
     {
        
@@ -35,10 +104,16 @@ public class Playercontroller : MonoBehaviour
             Debug.Log("Firing once every 1s");
         }
 
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
- 
+        
+         horizontalInput = Input.GetAxis("Horizontal");
+         verticalInput = Input.GetAxis("Vertical");
 
-        transform.Translate(new Vector3(horizontalInput, verticalInput, 0)* moveSpeed * Time.deltaTime);
+
+        isMoving();
+        isStop();
+
+        rb.velocity = new Vector2(horizontalInput * moveSpeed, verticalInput * moveSpeed);
     }
+
+   
 }

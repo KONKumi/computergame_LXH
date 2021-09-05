@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class StayInside : MonoBehaviour
 {
-    float xWidthP;
-    float yHeightP;
+
+    float xWidthP=16.49f;
+    float yHeightP=5.9f;
+    float negXWidthP=-12f;
+    float negYHeightP=-10.26f;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,12 +18,11 @@ public class StayInside : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        xWidthP = (Screen.width - 34) / 100;
-        yHeightP = (Screen.height - 54) / 100;
+     
 
         transform.position = new Vector3(
-            Mathf.Clamp(transform.position.x, -xWidthP, xWidthP),
-            Mathf.Clamp(transform.position.y, -yHeightP, yHeightP), 0);
+            Mathf.Clamp(transform.position.x, negXWidthP, xWidthP),
+            Mathf.Clamp(transform.position.y, negYHeightP, yHeightP), 0);
     }
 }
 
